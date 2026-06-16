@@ -1,5 +1,9 @@
 :root {
-  --clr-linear-gradient: hsl(237, 73%, 79%) to hsl(238, 63%, 64%);
+  --clr-linear-gradient: linear-gradient(
+    135deg,
+    hsl(237, 73%, 79%),
+    hsl(238, 63%, 64%)
+  );
   --clr-blue50: hsl(240, 78%, 98%);
   --clr-blue650: hsl(233, 13%, 49%);
   --clr-blue700: hsl(232, 13%, 33%);
@@ -14,7 +18,7 @@
   --clr-title: var(--clr-blue650);
 }
 
-/*Base simple*/
+/*Base/Reset simple*/
 h1,
 h2,
 h3,
@@ -23,6 +27,21 @@ h5,
 h6,
 p {
   font-family: var(--font-family);
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  font-weight: var(--font-700);
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -56,7 +75,7 @@ p {
   .container__cards {
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 2rem;
 
     .container__cards-card {
       display: flex;
@@ -67,7 +86,7 @@ p {
       gap: 0.3rem;
       background-color: var(--clr-accent);
       border-radius: 3%;
-      box-shadow: 7px 7px 2px 1px rgba(0, 0, 0, 0.309);
+      box-shadow: 7px 7px 100px 1px rgba(0, 0, 0, 0.309);
 
       .container__cards-cardTitle {
         font-size: var(--font-size-base);
@@ -83,10 +102,143 @@ p {
       }
 
       .container__cards-cardText {
+        position: relative;
         font-size: var(--font-size-base);
         color: var(--clr-title);
-        border-top: 1px solid var(--clr-title);
+        font-weight: var(--font-700);
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: -5rem;
+          right: -5rem;
+          border-top: 1px solid var(--clr-title);
+          top: -70%;
+          opacity: 0.2;
+        }
+      }
+
+      .container__cards-cardButton {
+        background: var(--clr-gradient);
+        color: var(--clr-accent);
+        padding: 0.5rem 7rem 0.5rem 7rem;
+        border: 1px solid var(--clr-title);
+        border-radius: 6px;
+        cursor: pointer;
+
+        &:hover {
+          background: transparent;
+          color: var(--clr-title);
+        }
       }
     }
+  }
+}
+
+/*Modifiers*/
+/* On utilise le chemin complet pour avoir la même priorité que les styles de base */
+.container .container__cards .container__cards-card.card--accent {
+  background: var(--clr-gradient);
+
+  .container__cards-cardTitle,
+  .container__cards-cardPricing,
+  .container__cards-cardText {
+    color: var(--clr-accent);
+  }
+
+  .container__cards-cardText::after {
+    border-top-color: var(--clr-accent);
+  }
+
+  .container__cards-cardButton {
+    background: white;
+    color: var(--clr-title);
+    border: 1px solid white;
+
+    &:hover {
+      background: transparent;
+      color: white;
+    }
+  }
+}
+
+.attribution {
+  font-size: 0.7rem;
+  color: var(--clr-title);
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/*toggle button*/
+/*
+Source - https://stackoverflow.com/a/79274945
+Posted by Naeem Akhtar
+Retrieved 2026-06-16, License - CC BY-SA 4.0
+*/
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.toggle input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--clr-gradient);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background: var(--clr-gradient);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+@media (min-width: 768px) {
+  .container .container__cards {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .container .container__cards .container__cards-card {
+    width: 22rem; /* Une largeur plus réaliste pour contenir tes boutons de 14rem+ */
+  }
+
+  /* On donne plus de hauteur à la carte du milieu */
+  .container .container__cards .container__cards-card.card--accent {
+    padding: 3rem 0.8rem;
+    z-index: 10; /* Pour que son ombre passe par-dessus les autres */
   }
 }

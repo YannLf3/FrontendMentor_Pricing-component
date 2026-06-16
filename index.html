@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
 
     <link
       rel="icon"
@@ -37,7 +38,13 @@
       <div class="container__cards">
         <div class="container__cards-card">
           <h2 class="container__cards-cardTitle">Basic</h2>
-          <p class="container__cards-cardPricing">&dollar;199.99</p>
+          <p
+            class="container__cards-cardPricing"
+            data-monthly="&dollar;19.99"
+            data-yearly="&dollar;199.99"
+          >
+            &dollar;199.99
+          </p>
           <p class="container__cards-cardText">500 GB Storage</p>
           <p class="container__cards-cardText">2 Users Allowed</p>
           <p class="container__cards-cardText">Send up to 3 GB</p>
@@ -46,18 +53,28 @@
 
         <div class="container__cards-card card--accent">
           <h2 class="container__cards-cardTitle">Professional</h2>
-          <p class="container__cards-cardPricing">&dollar;249.99</p>
+          <p
+            class="container__cards-cardPricing"
+            data-monthly="&dollar;24.99"
+            data-yearly="&dollar;249.99"
+          >
+            &dollar;249.99
+          </p>
           <p class="container__cards-cardText">1 TB Storage</p>
           <p class="container__cards-cardText">5 Users Allowed</p>
           <p class="container__cards-cardText">Send up to 10 GB</p>
-          <button class="container__cards-cardButton btn--white">
-            Learn More
-          </button>
+          <button class="container__cards-cardButton">Learn More</button>
         </div>
 
         <div class="container__cards-card">
           <h2 class="container__cards-cardTitle">Master</h2>
-          <p class="container__cards-cardPricing">&dollar;399.99</p>
+          <p
+            class="container__cards-cardPricing"
+            data-monthly="&dollar;39.99"
+            data-yearly="&dollar;399.99"
+          >
+            &dollar;399.99
+          </p>
           <p class="container__cards-cardText">2 TB Storage</p>
           <p class="container__cards-cardText">10 Users Allowed</p>
           <p class="container__cards-cardText">Send up to 20 GB</p>
@@ -65,10 +82,6 @@
         </div>
       </div>
     </div>
-    <!--&dollar;19.99 &dollar;199.99 500 GB Storage 2 Users Allowed Send up to 3 GB
-    Learn More Professional &dollar;24.99 &dollar;249.99 1 TB Storage 5 Users
-    Allowed Send up to 10 GB Learn More Master &dollar;39.99 &dollar;399.99 2 TB
-    Storage 10 Users Allowed Send up to 20 GB Learn More-->
 
     <footer class="attribution">
       Challenge by
