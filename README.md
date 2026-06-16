@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [GithubPages](https://yannlf3.github.io/FrontendMentor_Pricing-component/)
 
 ## My process
 
@@ -93,7 +93,7 @@ For my future project, you can follow me on X, Malt, Instagram and LinkedIn.
 
 ### Useful resources
 
-- [Example resource 1](https://stackoverflow.com/questions/76837048/creating-the-simplest-html-toggle-button) - This helped me for creating the toggle button. I really liked this pattern and will use it going forward.
+- [Stack Overflow](https://stackoverflow.com/questions/76837048/creating-the-simplest-html-toggle-button) - This helped me for creating the toggle button. I really liked this pattern and will use it going forward.
 
 ### AI Collaboration
 
