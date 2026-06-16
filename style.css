@@ -1,0 +1,92 @@
+:root {
+  --clr-linear-gradient: hsl(237, 73%, 79%) to hsl(238, 63%, 64%);
+  --clr-blue50: hsl(240, 78%, 98%);
+  --clr-blue650: hsl(233, 13%, 49%);
+  --clr-blue700: hsl(232, 13%, 33%);
+
+  --font-size-base: 1rem;
+  --font-family: "Montserrat";
+  --font-700: 700;
+
+  --clr-base: var(--clr-blue700);
+  --clr-gradient: var(--clr-linear-gradient);
+  --clr-accent: var(--clr-blue50);
+  --clr-title: var(--clr-blue650);
+}
+
+/*Base simple*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: var(--font-family);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  gap: 1.5rem;
+
+  .container__header {
+    display: flex;
+    flex-direction: column;
+
+    .container__header-title {
+      color: var(--clr-title);
+      font-size: 1.5rem;
+    }
+
+    .container__header-toggle {
+      display: inline-flex;
+      gap: 0.4rem;
+
+      .container__header-toggleText {
+        font-size: var(--font-size-base);
+        color: var(--clr-title);
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .container__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+
+    .container__cards-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 85vw;
+      padding: 0.8rem;
+      gap: 0.3rem;
+      background-color: var(--clr-accent);
+      border-radius: 3%;
+      box-shadow: 7px 7px 2px 1px rgba(0, 0, 0, 0.309);
+
+      .container__cards-cardTitle {
+        font-size: var(--font-size-base);
+        color: var(--clr-title);
+      }
+
+      .container__cards-cardPricing {
+        font-weight: var(--font-700);
+        color: var(--clr-base);
+        font-size: 2.5rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.9rem;
+      }
+
+      .container__cards-cardText {
+        font-size: var(--font-size-base);
+        color: var(--clr-title);
+        border-top: 1px solid var(--clr-title);
+      }
+    }
+  }
+}
